@@ -1,0 +1,134 @@
+body {
+  background-color: #1b263b;
+}
+nav {
+  .menuItems {
+    list-style: none;
+    display: flex;
+    justify-content: end;
+    margin-right: 150px;
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+
+    li {
+      margin: 20px;
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        font-weight: 10;
+        transition: all 0.5s ease-in-out;
+        position: relative;
+        text-transform: uppercase;
+
+        &::before {
+          content: attr(data-item);
+          transition: 0.5s;
+          color: #dbe76b;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 0;
+          overflow: hidden;
+        }
+
+        &:hover {
+          &::before {
+            width: 100%;
+            transition: all 0.5s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+.intro {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 150px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column; /* จัดเรียงให้อยู่คนละบรรทัด */
+}
+
+.intro h1 {
+  font-size: 96px;
+  font-weight: bold;
+}
+
+.intro p {
+  font-size: 32px;
+  font-style: regular;
+  font-family: "Josefin Sans";
+  display: flexbox;
+  flex-direction: column;
+}
+
+.profile-pic {
+  width: 500px;
+  height: 490px;
+  border-radius: 50%;
+  margin: 150px;
+  float: right;
+  margin-right: 100px;
+  position: relative;
+  top: -550px;
+}
+
+.skills {
+  color: white;
+  margin-top: 280px; /* เพิ่มระยะห่างจากด้านบนเพื่อเลื่อนส่วนนี้ลง */
+}
+
+.skills h2 {
+  font-size: 64px;
+  font-weight: bold;
+  font-family: "josefin sans", sans-serif;
+  margin-left: 150px;
+}
+
+.skills p {
+  font-size: 40px;
+  font-family: "josefin sans", sans-serif;
+  font-style: regular;
+  text-align: end;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;  /* อนุญาตให้ขึ้นแถวใหม่ */
+  justify-content: center;  /* จัดให้อยู่กึ่งกลางแนวนอน */
+  align-items: center;  /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+  gap: 50px; /* ระยะห่างระหว่างไอคอน */
+  max-width: 700px; /* ปรับให้เหมาะสมกับขนาดของไอคอน */
+  margin: auto; /* ทำให้กล่องของไอคอนอยู่ตรงกลาง */
+  transform: translateX(370px); /* ขยับไปทางขวา */
+  margin-top: 50px; /* เพิ่มระยะห่างจากข้อความใน .skills */
+}
+
+.icons img {
+  width: 100px; /* ขนาดไอคอนที่ใหญ่ขึ้น */
+  height: 100px; /* ขนาดไอคอนที่ใหญ่ขึ้น */
+  object-fit: contain;
+}
+
+/* แถวแรก (4 ไอคอน) */
+.icons img:nth-child(-n+4) {
+  flex-basis: calc(25% - 50px); /* ใช้ 4 ไอคอนในแถว */
+}
+
+/* แถวที่สอง (3 ไอคอน) */
+.icons img:nth-child(n+5) {
+  width: 100px; /* ขนาดไอคอนที่ใหญ่ขึ้น */
+  flex-basis: calc(33.33% - 50px); /* ใช้ 3 ไอคอนในแถวที่สอง */
+}
+
+
+
+
