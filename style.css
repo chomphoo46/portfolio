@@ -1,134 +1,336 @@
 body {
   background-color: #1b263b;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 nav {
-  .menuItems {
-    list-style: none;
-    display: flex;
-    justify-content: end;
-    margin-right: 150px;
-    font-family: "Poppins", sans-serif;
-    font-size: 32px;
+  width: 100%;
+}
 
-    li {
-      margin: 20px;
+nav .menuItems {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+  margin-right: 5%;
+  font-family: "Poppins", sans-serif;
+  flex-wrap: wrap;
+}
 
-      a {
-        text-decoration: none;
-        color: white;
-        font-size: 20px;
-        font-weight: 10;
-        transition: all 0.5s ease-in-out;
-        position: relative;
-        text-transform: uppercase;
+nav .menuItems li {
+  margin: 10px 20px;
+}
 
-        &::before {
-          content: attr(data-item);
-          transition: 0.5s;
-          color: #dbe76b;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          width: 0;
-          overflow: hidden;
-        }
+nav .menuItems li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  text-transform: uppercase;
+}
 
-        &:hover {
-          &::before {
-            width: 100%;
-            transition: all 0.5s ease-in-out;
-          }
-        }
-      }
-    }
-  }
+nav .menuItems li a::before {
+  content: attr(data-item);
+  transition: 0.5s;
+  color: #dbe76b;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+nav .menuItems li a:hover::before {
+  width: 100%;
+  transition: all 0.5s ease-in-out;
 }
 
 .intro {
   font-family: "Poppins", sans-serif;
   color: white;
-  margin-left: 150px;
-  margin-right: 150px;
-  margin-top: 150px;
-  font-size: 20px;
+  margin: 5% 5%;
   display: flex;
-  flex-direction: column; /* จัดเรียงให้อยู่คนละบรรทัด */
+  flex-direction: column;
+  position: relative;
 }
 
 .intro h1 {
-  font-size: 96px;
+  font-size: clamp(40px, 8vw, 96px);
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .intro p {
-  font-size: 32px;
-  font-style: regular;
-  font-family: "Josefin Sans";
-  display: flexbox;
-  flex-direction: column;
+  font-size: clamp(18px, 3vw, 32px);
+  font-family: "Josefin Sans", sans-serif;
+  max-width: 60%;
 }
 
 .profile-pic {
-  width: 500px;
-  height: 490px;
+  width: min(400px, 90vw);
+  height: auto;
+  aspect-ratio: 1/1;
   border-radius: 50%;
-  margin: 150px;
-  float: right;
-  margin-right: 100px;
-  position: relative;
-  top: -550px;
+  object-fit: cover;
+  position: absolute;
+  top: 150px;
+  right: 60px;
+  max-width: 40%;
 }
 
 .skills {
   color: white;
-  margin-top: 280px; /* เพิ่มระยะห่างจากด้านบนเพื่อเลื่อนส่วนนี้ลง */
+  margin-top: 150px;
+  /* Reduced margin to position skills at the top */
+  padding: 0 5%;
+  clear: both;
 }
 
 .skills h2 {
-  font-size: 64px;
+  font-size: clamp(32px, 6vw, 64px);
   font-weight: bold;
-  font-family: "josefin sans", sans-serif;
-  margin-left: 150px;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: left;
+  /* Added to match the paragraph alignment */
 }
 
 .skills p {
-  font-size: 40px;
-  font-family: "josefin sans", sans-serif;
-  font-style: regular;
-  text-align: end;
+  font-size: clamp(18px, 4vw, 40px);
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .icons {
   display: flex;
-  flex-wrap: wrap;  /* อนุญาตให้ขึ้นแถวใหม่ */
-  justify-content: center;  /* จัดให้อยู่กึ่งกลางแนวนอน */
-  align-items: center;  /* จัดให้อยู่กึ่งกลางแนวตั้ง */
-  gap: 50px; /* ระยะห่างระหว่างไอคอน */
-  max-width: 700px; /* ปรับให้เหมาะสมกับขนาดของไอคอน */
-  margin: auto; /* ทำให้กล่องของไอคอนอยู่ตรงกลาง */
-  transform: translateX(370px); /* ขยับไปทางขวา */
-  margin-top: 50px; /* เพิ่มระยะห่างจากข้อความใน .skills */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(20px, 3vw, 50px);
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 .icons img {
-  width: 100px; /* ขนาดไอคอนที่ใหญ่ขึ้น */
-  height: 100px; /* ขนาดไอคอนที่ใหญ่ขึ้น */
+  width: clamp(50px, 10vw, 100px);
+  height: auto;
+  aspect-ratio: 1/1;
   object-fit: contain;
 }
 
-/* แถวแรก (4 ไอคอน) */
-.icons img:nth-child(-n+4) {
-  flex-basis: calc(25% - 50px); /* ใช้ 4 ไอคอนในแถว */
+.projects {
+  color: white;
+  margin-top: 150px;
+  /* Reduced margin to position projects at the top */
+  padding: 0 5%;
+  clear: both;
 }
 
-/* แถวที่สอง (3 ไอคอน) */
-.icons img:nth-child(n+5) {
-  width: 100px; /* ขนาดไอคอนที่ใหญ่ขึ้น */
-  flex-basis: calc(33.33% - 50px); /* ใช้ 3 ไอคอนในแถวที่สอง */
+.projects h2 {
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: bold;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: left;
+  /* Added to match the paragraph alignment */
+}
+
+.projects .project h3 {
+  font-size: clamp(18px, 4vw, 32px);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  text-align: left;
+  /* Changed from left to right */
+  margin-bottom: 40px;
+  padding: 0 5%;
+}
+.projects .doomovie-project {
+  margin-top: 150px;
+}
+
+.projects .meow-project {
+  margin-top: 150px;
+}
+.projects .project p {
+  font-size: clamp(16px, 3vw, 20px);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+  text-align: left;
+  /* Changed from left to right */
+  margin-bottom: 40px;
+  padding: 0 5%;
+}
+
+.projects .project .skills-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+  padding: 0 5%;
+}
+
+.projects .project .skills-badges div {
+  border: 1px solid white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: clamp(16px, 2vw, 18px);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 100;
+  text-align: left;
+  /* Changed from left to right */
+}
+
+.projects .project .pic-project {
+  position: relative;
+  width: 100%;
+  top: 40px;
+  perspective: 1000px;
+}
+
+.projects .project .pic-project img:first-child {
+  position: absolute;
+  top: -350px;
+  right: 50px;
+}
+
+.projects .project .pic-project img:last-child {
+  position: absolute;
+  top: -350px;
+  right: -70px; /* Increased from 50px to add spacing */
+}
+.projects .project .pic-project-doomovie {
+  position: relative;
+  width: 90%;
+  top: 120px;
+  perspective: 1000px;
+}
+
+.projects .project .pic-project-doomovie img:first-child {
+  position: absolute;
+  top: -350px;
+  right: 100px;
+}
+
+.projects .project .pic-project-doomovie img:last-child {
+  position: absolute;
+  top: -350px;
+  right: -150px; /* Increased from 50px to add spacing */
+}
+
+.projects .project .pic-project-meow {
+  position: relative;
+  width: 90%;
+  top: 120px;
+  perspective: 1000px;
+}
+
+.projects .project .pic-project-meow img:first-child {
+  position: absolute;
+  top: -350px;
+  right: 250px;
+}
+
+.projects .project .pic-project-meow img:last-child {
+  position: absolute;
+  top: -350px;
+  right: -150px; /* Increased from 50px to add spacing */
+}
+
+.projects .project .icons_Figma a {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: left;
+  align-items: right;
+  margin-bottom: 40px;
+  padding: 0 5%;
+}
+
+.projects .project .icons_fixsci {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: right;
+  gap: clamp(20px, 3vw, 50px);
+  max-width: 80%;
+  padding: 0 5%;
+}
+
+.projects .project .icons_fixsci img {
+  width: clamp(50px, 10vw, 50px);
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: contain;
 }
 
 
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+  .profile-pic {
+    position: relative;
+    margin: 30px auto;
+    max-width: 60%;
+  }
 
+  .intro p {
+    max-width: 100%;
+  }
 
+  .skills {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav .menuItems {
+    justify-content: center;
+    margin-right: 0;
+  }
+
+  .intro {
+    text-align: center;
+  }
+
+  .profile-pic {
+    position: relative;
+    margin: 30px auto;
+    max-width: 70%;
+  }
+
+  .skills h2 {
+    text-align: center;
+  }
+
+  .skills p {
+    text-align: center;
+  }
+
+  .icons {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  nav .menuItems li {
+    margin: 5px 10px;
+  }
+
+  nav .menuItems li a {
+    font-size: 16px;
+  }
+
+  .profile-pic {
+    max-width: 80%;
+  }
+
+  .icons img {
+    width: 60px;
+  }
+}

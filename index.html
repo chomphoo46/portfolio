@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontend Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <nav>
             <ul class="menuItems">
-              <li><a href='#' data-item='Home'>Home</a></li>
-              <li><a href='#' data-item='Skill'>Skill</a></li>
-              <li><a href='#' data-item='Projects'>Projects</a></li>
-              <li><a href='#' data-item='Activities'>Activities</a></li>
-              <li><a href='#' data-item='Contact'>Contact</a></li>
+                <li><a href='#' data-item='Home'>Home</a></li>
+                <li><a href='#' data-item='Skill'>Skill</a></li>
+                <li><a href='#' data-item='Projects'>Projects</a></li>
+                <li><a href='#' data-item='Activities'>Activities</a></li>
+                <li><a href='#' data-item='Contact'>Contact</a></li>
             </ul>
-          </nav>
+        </nav>
     </header>
     <section id="home" class="hero">
         <div class="intro">
             <h1>Frontend Developer</h1>
-            <p>Hi 👋, I'm Chomphoo Inchan <br>  
-                I am a third-year student at King Mongkut's Institute of <br> Technology Ladkrabang with an interest in Frontend development and UX/UI design.</p>                
+            <p>Hi 👋, I'm Chomphoo Inchan <br>
+                I am a third-year student at King Mongkut's Institute of <br> Technology Ladkrabang with an interest in
+                Frontend development and UX/UI design.</p>
         </div>
         <img src="/assets/IMG_1513.JPG" alt="Profile Picture" class="profile-pic">
     </section>
@@ -43,15 +46,58 @@
         <h2>Projects</h2>
         <div class="project">
             <h3>Science Fixit</h3>
-            <p>A platform for reporting academic issues within the Faculty of Science, KMITL, using React and Tailwind CSS.</p>
+            <div class="skills-badges">
+                <div class="React">React</div>
+                <div class="Tailwind">Tailwind CSS</div>
+                <div class="JavaScript">JavaScript</div>
+                <div class="Figma">Figma</div>
+            </div>
+            <p>Science Fixit is a platform for reporting <br> maintenance issues within the Faculty of Science at KMITL,
+                <br>enabling students, faculty, and staff to submit repair requests easily for <br>
+                a well-maintained environment.
+            </p>
+            <div class="pic-project">
+                <img src="/assets/MacBook Air (15 inch) (1).png" alt="Science Fixit">
+                <img src="/assets/MacBook Air (15 inch) (2).png" alt="Science Fixit">
+            </div>
+            <div class="icons_fixsci">
+                <a href="#"><img src="/assets/github.png" alt="GitHub"></a>
+                <a href="#"> <img src="/assets/figma.png" alt="Figma"></a>
+            </div>
         </div>
-        <div class="project">
+        <div class="project doomovie-project">
             <h3>DooMovie</h3>
-            <p>A web app that centralizes entertainment content from multiple platforms.</p>
+            <div class="skills-badges">
+                <div class="Figma">Figma</div>
+            </div>
+            <p>DooMovie is a web app that centralizes entertainment from multiple platforms,<br>
+                offering seamless access to diverse content without multiple subscriptions.</p>
+            <div class="pic-project-doomovie">
+                <img src="/assets/HomePage (2) 1.png" alt="DooMovie">
+                <img src="/assets/movie.png" alt="DooMovie">
+            </div>
+            <div class="icons_Figma">
+                <a href="https://www.figma.com/design/m0cLHA865wLndLPfToQ0Er/DooMovie?t=wZicWhBRhjfDmWVh-0"> <img
+                        src="/assets/figma.png" alt="Figma"></a>
+            </div>
         </div>
-        <div class="project">
+        <div class="project meow-project">
             <h3>Meow Moments</h3>
-            <p>An app that brings together a cat-loving community.</p>
+            <div class="skills-badges">
+                <div class="Figma">Figma</div>
+            </div>
+            <p>Meow Moments is an app that brings together the cutest cat content,<br>
+                from adorable poses to cozy sleeping positions. Share your cat’s most charming <br>
+                moments with fellow cat lovers and celebrate the joy of feline companionship!</p>
+            <div class="pic-project-meow">
+                <img src="/assets/login page (1) 1.png" alt="DooMovie">
+                <img src="/assets/iPhone 15 Pro (2) 1.png" alt="DooMovie">
+            </div>
+            <div class="icons_Figma">
+                <a
+                    href="https://www.figma.com/design/vDRqg7h1AQDFczXLk0Qa3Y/App-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%A1%E0%B8%B5%E0%B9%89%E0%B8%A2%E0%B8%A7%E0%B9%86?node-id=2-21&p=f&t=XCSvznVJMneAz0a0-0">
+                    <img src="/assets/figma.png" alt="Figma"></a>
+            </div>
         </div>
     </section>
     <section id="activities" class="activities">
@@ -65,4 +111,5 @@
     </section>
     <script src="script.js"></script>
 </body>
+
 </html>
